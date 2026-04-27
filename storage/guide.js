@@ -16,7 +16,9 @@ async function loadGuide() {
 async function saveGuide(guide) {
   try {
     await AsyncStorage.setItem(GUIDE_KEY, JSON.stringify(guide));
-  } catch (e) {}
+  } catch (e) {
+    return;
+  }
 }
 
 async function loadUserSpots() {
@@ -31,7 +33,9 @@ async function loadUserSpots() {
 async function saveUserSpots(spots) {
   try {
     await AsyncStorage.setItem(USER_SPOTS_KEY, JSON.stringify(spots));
-  } catch (e) {}
+  } catch (e) {
+    return;
+  }
 }
 
 async function loadActiveCity() {
@@ -46,7 +50,9 @@ async function loadActiveCity() {
 async function saveActiveCity(cityId) {
   try {
     await AsyncStorage.setItem(CITY_KEY, cityId);
-  } catch (e) {}
+  } catch (e) {
+    return;
+  }
 }
 
 module.exports = {
